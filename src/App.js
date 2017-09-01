@@ -6,12 +6,20 @@ import {items} from './static-data';
 
 class App extends Component {
   state = {
-    activeTab: 0
+    activeTab: 0,
+    cart: []
   };
 
   handleTabChange = (index) => {
     this.setState({
       activeTab: index
+
+    });
+  }
+
+  handleAddToCart = (item) => {
+    this.setState({
+      cart: [...this.state.cart, item.id]
     });
   }
 
@@ -19,7 +27,10 @@ class App extends Component {
     let content;
     switch (this.state.activeTab) {
       case 0:
-        content = <ItemPage items={items}/>;
+        content = <ItemPage
+          items={items}
+          onAddToCart={this.handleAddToCart}
+                  />;
         break;
       case 1:
         content = <span>Cart</span>;
