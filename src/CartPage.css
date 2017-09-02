@@ -1,0 +1,36 @@
+.cartpage-items {
+  padding: 0;
+  margin: 0;
+}
+
+.cartpage-item {
+  list-style: none;
+}
+
+.cartpage-count {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+
+.cartpage-removeone,
+.cartpage-addone {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  /*font-size: 1.2em;*/
+}
+
+.cartpage-removeone {
+  border-right: 0;
+}
+
+.cartpage-addone {
+  border-left: 0;
+}
+
+.cartpage-removeone:hover,
+.cartpage-addone:hover {
+  background-color: #ccc;
+  color: #fff;
+  cursor: pointer;
+}
