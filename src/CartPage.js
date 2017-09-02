@@ -24,11 +24,11 @@ function CartPage({items, onAddOne, onRemoveOne}) {
                 >+</button>
               </div>
             </Item>
-            <div>
-              Total: $2032
-            </div>
           </li>
         ))}
+        <li className='cartpage-item cartpage-total'>
+          Total: ${(items.reduce( (total, item) => total+=item.price*item.count, 0 )).toFixed(2)}
+        </li>
       </ul>
     ) : (
       <div className='cartpage-empty'>
