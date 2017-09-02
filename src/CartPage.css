@@ -17,7 +17,6 @@
   padding: 5px 10px;
   border: 1px solid #ccc;
   background-color: #fff;
-  /*font-size: 1.2em;*/
 }
 
 .cartpage-removeone {
@@ -33,4 +32,16 @@
   background-color: #ccc;
   color: #fff;
   cursor: pointer;
+}
+
+.cartpage-removeone:focus,
+.cartpage-addone:focus {
+  outline: none;
+}
+
+.cartpage-empty {
+  padding: 10px 0;
+  text-align: center;
+  color: #ccc;
+  font-size: 1.4em;
 }
