@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Item.css';
 
-function Item({item, onAddToCart}) {
+function Item({item, children}) {
   return (
     <div className='item'>
       <div className='item-left'>
@@ -18,12 +18,7 @@ function Item({item, onAddToCart}) {
         <div className='item-price'>
           ${item.price}
         </div>
-        <button
-          className='item-addToCart'
-          onClick={onAddToCart}
-        >
-          Add to Cart
-        </button>
+        {children}
       </div>
     </div>
   );
@@ -32,7 +27,7 @@ function Item({item, onAddToCart}) {
 
 Item.propTypes = {
   item: PropTypes.object.isRequired,
-  onAddToCart: PropTypes.func.isRequired
+  children: PropTypes.node
 };
 
 export default Item;
