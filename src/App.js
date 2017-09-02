@@ -52,8 +52,7 @@ class App extends Component {
     return content;
   };
 
-  renderCartPage= () =>{
-    // Count how many of each items is in the cart
+  computeCartItems = () => {
     let itemCounts = this.state.cart.reduce((itemCounts, itemId) => {
       itemCounts[itemId] = itemCounts[itemId] || 0;
       itemCounts[itemId] ++;
@@ -61,7 +60,7 @@ class App extends Component {
     }, {});
 
     // Create an array of items
-    let cartItems = Object.keys(itemCounts).map(itemId => {
+    return Object.keys(itemCounts).map(itemId => {
       // Find the item by its id
       let item = items.find( item => item.id === parseInt(itemId, 10));
       return {
@@ -69,6 +68,12 @@ class App extends Component {
         count: itemCounts[itemId]
       };
     });
+  }
+
+  renderCartPage= () =>{
+
+    // Create an array of items with count
+    let cartItems = this.computeCartItems();
 
     return (
       <CartPage items={cartItems}
@@ -84,6 +89,7 @@ class App extends Component {
       <div className="App">
         <Nav activeTab={activeTab}
           onTabChange={this.handleTabChange}
+          items={this.computeCartItems()}
         />
         <main className="App-content">
           {this.renderContent()}

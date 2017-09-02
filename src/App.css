@@ -7,6 +7,8 @@
   margin: 20px;
   padding: 10px;
   border-bottom: 2px solid #508FCA;
+  display: flex;
+  justify-content: space-between;
 }
 
 .App-nav ul {
@@ -36,4 +38,10 @@
 
 .App-content {
   margin: 0 20px;
+}
+
+.App-nav-summary {
+  color: #555;
+  font-size: 1.2em;
+  cursor: pointer;
 }
